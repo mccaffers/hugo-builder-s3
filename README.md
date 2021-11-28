@@ -1,6 +1,3 @@
-# HugoS3
-
-
 ## HugoS3
 
 This is a **hobby project** to build a docker container that pulls a hugo git repository, build it and then push it to S3. The docker image can then be put behind an AWS Lambda (so I've included a dummy Python endpoint ```main.py```). You can then use a git webhook to automate updates to your blog.
