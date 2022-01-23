@@ -12,4 +12,5 @@ else
 fi
 
 hugo -D
+aws s3 rm s3://$S3BucketName --recursive
 aws s3 cp /tmp/$ProjectName/public s3://$S3BucketName/ --recursive --acl public-read
