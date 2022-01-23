@@ -8,8 +8,8 @@ then
 else
     git clone $GitUrl
     cd $ProjectName
-    git submodule update
+    git submodule update --init --recursive
 fi
 
 hugo -D
-aws s3 cp /tmp/$ProjectName/public s3://$S3BucketName/ --recursive --acl public-read
+aws s3 cp /tmp/$ProjectName/public s3://$S3BucketName/ --recursive
