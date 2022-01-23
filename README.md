@@ -21,7 +21,7 @@ docker build -t hugoS3 --build-arg S3BucketName=$S3BucketName --build-arg GitUrl
 
 Deploy image
 ```
-docker tag hugoS3:latest {ECR Identifer}..dkr.ecr.{AWS Region}.amazonaws.com/hugoS3:latest;
+docker tag hugoS3:latest {ECR Identifer}.dkr.ecr.{AWS Region}.amazonaws.com/hugoS3:latest;
 docker push {ECR Identifer}.dkr.ecr.{AWS Region}.amazonaws.com/hugoS3:latest;
 ```
 
