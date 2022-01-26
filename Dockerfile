@@ -3,6 +3,14 @@ FROM ubuntu:20.04
 ARG S3BucketName
 ARG GitUrl
 ARG ProjectName
+ARG SSH_PRIVATE_KEY
+ARG SSH_KNOWN_HOSTS
+
+RUN mkdir /var/task
+RUN mkdir /var/task/certs/
+RUN echo "${SSH_PRIVATE_KEY}" > /var/task/certs/github
+RUN chmod 600 /var/task/certs/github
+RUN echo "${SSH_KNOWN_HOSTS}" > /var/task/certs/known_hosts
 
 ENV S3BucketName=$S3BucketName
 ENV GitUrl=$GitUrl

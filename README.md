@@ -16,7 +16,7 @@ aws ecr get-login-password --region eu-west-1 | docker login --username AWS --pa
 
 Build image
 ```
-docker build -t hugoS3 --build-arg S3BucketName=$S3BucketName --build-arg GitUrl=$Giturl --build-arg ProjectName=$ProjectName .;
+docker build -t hugoS3 --build-arg S3BucketName=$S3BucketName --build-arg GitUrl=$Giturl --build-arg ProjectName=$ProjectName SSH_PRIVATE_KEY="$(cat /path/to/key)" --build-arg SSH_KNOWN_HOSTS="$(cat /path/to/known_hosts)" .;
 ```
 
 Deploy image
