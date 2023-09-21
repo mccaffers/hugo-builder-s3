@@ -1,10 +1,12 @@
 FROM ubuntu:20.04
+ARG TARGETARCH
 
 ARG S3BucketName
 ARG GitUrl
 ARG ProjectName
 ARG SSH_PRIVATE_KEY
 ARG SSH_KNOWN_HOSTS
+ARG Distributionid
 
 RUN mkdir /var/task
 RUN mkdir /var/task/certs/
@@ -15,6 +17,7 @@ RUN echo "${SSH_KNOWN_HOSTS}" > /var/task/certs/known_hosts
 ENV S3BucketName=$S3BucketName
 ENV GitUrl=$GitUrl
 ENV ProjectName=$ProjectName
+ENV Distributionid=$Distributionid
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \

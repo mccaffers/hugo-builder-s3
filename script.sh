@@ -17,4 +17,5 @@ else
 fi
 
 hugo
-aws s3 cp /tmp/$ProjectName/public s3://$S3BucketName/ --recursive --acl public-read
+aws s3 cp /tmp/$ProjectName/public s3://$S3BucketName/ --recursive
+aws cloudfront create-invalidation --distribution-id $Distributionid --paths "/*"
