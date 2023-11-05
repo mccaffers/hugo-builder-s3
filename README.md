@@ -1,8 +1,8 @@
 ## Hugo Builder S3
 
-This project builds a docker container to pull a git repository containing a Hugo Blog repository. The running container builds the hugo static files and then push the ./static folder to S3. 
+Sets up a docker image to pull a git repository containing a Hugo Blog repository, build the contents and upload to S3. This is used in automating the deployment of static content to S3.
 
-The docker image can then be put behind an AWS Lambda (so I've included a dummy Python endpoint ```main.py```). You can then use a git webhook to automate updates to your blog.
+The docker image can deployed on an AWS Lambda (there is Python endpoint `main.py` to initiate the hugo builder script `script.sh`). A webhook can then trigger the pull, build and upload to S3.
 
 ### Build
 
