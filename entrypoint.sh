@@ -1,10 +1,14 @@
 #!/bin/sh
 
-set -x
-# aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID; 
-# aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY; 
-# aws configure set default.region $AWS_DEFAULT_REGION
+## Hugo Builder and S3 Upload (hugo-builder-s3)
+## By Ryan McCaffery (mccaffers.com)
+##
+## This code is licensed under Creative Commons Zero (CC0)
+## You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.
+## See LICENSE.md for more details
+## ---------------------------------------
 
+set -x
 cd $FUNCTION_DIR
 
 if [ -z "${AWS_LAMBDA_RUNTIME_API}" ]; then
