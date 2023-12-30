@@ -4,6 +4,7 @@ Sets up a docker image to pull a git repository containing a Hugo Blog repositor
 
 The docker image can deployed on an AWS Lambda (there is Python endpoint `main.py` to initiate the hugo builder script `script.sh`). A webhook can then trigger the pull, build and upload to S3.
 
+<img src="hugos3.drawio.png" />
 ### Build
 
 Build image with a number of arguements:
