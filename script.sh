@@ -24,6 +24,6 @@ else
     git submodule update --init --recursive
 fi
 
-hugo
+hugo --minify
 aws s3 cp /tmp/$ProjectName/public s3://$S3BucketName/ --recursive
 aws cloudfront create-invalidation --distribution-id $Distributionid --paths "/*"

@@ -46,8 +46,8 @@ RUN ./aws/install
 
 ENV FUNCTION_DIR=/var/task
 
-ADD https://github.com/gohugoio/hugo/releases/download/v0.120.4/hugo_0.120.4_Linux-64bit.tar.gz / tmp
-RUN tar -xzf /tmp/hugo_0.120.4_Linux-64bit.tar.gz -C /tmp
+ADD https://github.com/gohugoio/hugo/releases/download/v0.121.1/hugo_0.121.1_Linux-64bit.tar.gz /tmp
+RUN tar -xzf /tmp/hugo_0.121.1_Linux-64bit.tar.gz -C /tmp
 RUN mv /tmp/hugo /usr/bin && rm -rf /tmp/*
 RUN pip3 install awslambdaric
 
