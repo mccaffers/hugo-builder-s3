@@ -15,6 +15,8 @@ ARG ProjectName
 ARG SSH_PRIVATE_KEY
 ARG SSH_KNOWN_HOSTS
 ARG Distributionid
+ARG S3BucketName_TestEnvironment
+ARG Distributionid_TestEnvironment
 
 RUN mkdir /var/task
 RUN mkdir /var/task/certs/
@@ -26,6 +28,8 @@ ENV S3BucketName=$S3BucketName
 ENV GitUrl=$GitUrl
 ENV ProjectName=$ProjectName
 ENV Distributionid=$Distributionid
+ENV S3BucketName_TestEnvironment=$S3BucketName_TestEnvironment
+ENV Distributionid_TestEnvironment=$Distributionid_TestEnvironment
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
