@@ -53,5 +53,3 @@ if [ -n "$S3BucketName_TestEnvironment" ]; then
     aws s3 cp /tmp/$ProjectName/public s3://$S3BucketName_TestEnvironment/ --recursive
     aws cloudfront create-invalidation --distribution-id $Distributionid_TestEnvironment --paths "/*"
 fi
-
-
