@@ -45,6 +45,7 @@ aws cloudfront create-invalidation --distribution-id $Distributionid --paths "/*
 if [ -n "$S3BucketName_TestEnvironment" ]; then
     rm -rf /tmp/$ProjectName/public
     mv -f /tmp/$ProjectName/test-config/config.yaml /tmp/$ProjectName/config.yaml 
+    mv -f /tmp/$ProjectName/test-config/robots.txt /tmp/$ProjectName/static/robots.txt
     
     # `-D` builds drafts and publishes them for viewing
     hugo -D
